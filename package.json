@@ -3,10 +3,10 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "test": "codeceptjs run --steps",
-        "codeceptjs": "codeceptjs run --steps",
-        "codeceptjs:headless": "HEADLESS=true codeceptjs run --steps",
-        "codeceptjs:ui": "codecept-ui --app",
+        "test": "codeceptjs run --steps --reporter mochawesome",
+        "codeceptjs": "codeceptjs run --steps --reporter mochawesome",
+        "codeceptjs:headless": "HEADLESS=true codeceptjs run --steps --reporter mochawesome",
+        "codeceptjs:ui": "codecept-ui --app --reporter mochawesome",
         "codeceptjs:demo": "codeceptjs run --steps -c node_modules/@codeceptjs/examples",
         "codeceptjs:demo:headless": "HEADLESS=true codeceptjs run --steps -c node_modules/@codeceptjs/examples",
         "codeceptjs:demo:ui": "codecept-ui --app  -c node_modules/@codeceptjs/examples"
@@ -17,5 +17,10 @@
         "@codeceptjs/ui": "^0.4.6",
         "codeceptjs": "^3.0.7",
         "playwright": "^1.12.3"
+    },
+    "dependencies": {
+        "chai": "^4.3.4",
+        "codeceptjs-chai": "^2.3.1",
+        "mochawesome": "^6.2.2"
     }
 }
